@@ -1,0 +1,162 @@
+/* Mobile-first base styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Clock panel - stacked on mobile */
+.clockPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #333;
+}
+
+/* Timer display - responsive sizing */
+.fliqloDisplay {
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: -0.2rem;
+  margin: 1rem 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+/* Controls - wrap on small screens */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.controlButton, 
+.settingsButton {
+  padding: 0.7rem 1.2rem;
+  border: 1px solid #444;
+  background: #111;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 4px;
+  min-width: 80px;
+}
+
+.controlButton:hover, 
+.settingsButton:hover {
+  background: #222;
+  border-color: #666;
+}
+
+/* Camera panel - full width on mobile */
+.cameraPanel {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.cameraFeed {
+  width: 100%;
+  max-height: 50vh;
+  object-fit: contain;
+  border: 1px solid #333;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.statusDisplay {
+  padding: 0.8rem;
+  background: #111;
+  border: 1px solid #333;
+  text-align: center;
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+  .fliqloDisplay {
+    font-size: 6rem;
+    letter-spacing: -0.3rem;
+    margin: 1.5rem 0;
+  }
+  
+  .controls {
+    gap: 1rem;
+  }
+  
+  .controlButton,
+  .settingsButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    min-width: 100px;
+  }
+  
+  .cameraFeed {
+    max-height: 60vh;
+  }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+    height: 100vh;
+  }
+  
+  .clockPanel {
+    flex: 1;
+    border-right: 1px solid #333;
+    border-bottom: none;
+    padding: 2rem;
+  }
+  
+  .fliqloDisplay {
+    font-size: 8rem;
+    letter-spacing: -0.4rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cameraPanel {
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  .cameraFeed {
+    max-height: 70vh;
+  }
+}
+
+/* Large Desktop (1200px and up) */
+@media (min-width: 1200px) {
+  .fliqloDisplay {
+    font-size: 10rem;
+    letter-spacing: -0.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+/* Small mobile devices (under 400px) */
+@media (max-width: 400px) {
+  .fliqloDisplay {
+    font-size: 3.5rem;
+  }
+  
+  .controlButton,
+  .settingsButton {
+    padding: 0.6rem 1rem;
+    min-width: 70px;
+    font-size: 0.8rem;
+  }
+}
